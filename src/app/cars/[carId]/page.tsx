@@ -1,4 +1,4 @@
-const CarDetailsPage = () => {
+const CarDetailsPage = (props) => {
   return <div>CarDetailsPage</div>;
 };
 

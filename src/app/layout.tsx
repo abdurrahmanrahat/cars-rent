@@ -1,3 +1,4 @@
+import { Providers } from "@/lib/providers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
@@ -17,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>
+          <h4>Navbar</h4>
+          <div className="min-h-screen">{children}</div>
+          <h4>Footer</h4>
+        </Providers>
+      </body>
     </html>
   );
 }
