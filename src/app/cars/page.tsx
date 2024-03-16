@@ -1,3 +1,4 @@
+import ViewDetail from "@/components/ViewDetail";
 import { Card, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
@@ -6,15 +7,15 @@ const CarsPage = async () => {
     "https://26d62fae-d7ca-430f-bf63-35e2cb44772a.mock.pstmn.io/cars"
   );
   const { data } = await res.json();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
-      {data?.map((item) => (
+      {data?.map((item: any) => (
         <Card
           key={item.id}
           isFooterBlurred
-          className="w-full h-[300px] col-span-12 sm:col-span-7"
+          className="w-full col-span-12 sm:col-span-7"
         >
           <CardHeader className="absolute z-10 top-1 flex-col items-start">
             <p className="text-tiny text-white/60 uppercase font-bold">
@@ -29,6 +30,7 @@ const CarsPage = async () => {
             width={450}
             height={450}
           />
+          <ViewDetail id={item.id} />
         </Card>
       ))}
     </div>
