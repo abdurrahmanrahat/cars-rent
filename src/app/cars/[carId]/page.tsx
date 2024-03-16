@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const CarDetailsPage = async (props) => {
+const CarDetailsPage = async (props: any) => {
   const res = await fetch(
-    `https://0915ef4e-862d-4055-943f-303ac199da3d.mock.pstmn.io//cars/${props.params.carId}`
+    `https://0915ef4e-862d-4055-943f-303ac199da3d.mock.pstmn.io/cars/${props.params.carId}`
   );
   const { data } = await res.json();
   console.log(data);
@@ -20,5 +20,16 @@ const CarDetailsPage = async (props) => {
     </div>
   );
 };
+
+export async function generateStaticParams() {
+  const res = await fetch(
+    "https://0915ef4e-862d-4055-943f-303ac199da3d.mock.pstmn.io/cars"
+  );
+  const { data } = await res.json();
+
+  return data?.map((item: any) => ({
+    carId: item.id.toString(),
+  }));
+}
 
 export default CarDetailsPage;
