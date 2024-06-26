@@ -12,7 +12,7 @@ export function ThemeSwitcher() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return <SunMoon />;
 
   return (
     <div>

@@ -30,7 +30,7 @@ const NavBar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          {/* {user && <Link href={routeMap[user?.role]}>Dashboard</Link>} */}
+          <Link href={`/dashboard`}>Dashboard</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
