@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Welcome to Famous Shop to Rent Cars",
 };
 
-const layout = ({ children }: { children: ReactNode }) => {
+const CommonLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <NavBar />
@@ -18,4 +18,4 @@ const layout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default layout;
+export default CommonLayout;

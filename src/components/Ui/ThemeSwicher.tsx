@@ -1,5 +1,6 @@
 "use client";
 
+import { Moon, SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -15,9 +16,15 @@ export function ThemeSwitcher() {
 
   return (
     <div>
-      The current theme is: {theme}
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
+      {theme === "light" ? (
+        <button onClick={() => setTheme("dark")}>
+          <Moon />
+        </button>
+      ) : (
+        <button onClick={() => setTheme("light")}>
+          <SunMoon />
+        </button>
+      )}
     </div>
   );
 }

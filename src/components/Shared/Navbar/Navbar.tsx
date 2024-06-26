@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from "@/components/Ui/ThemeSwicher";
 import {
   Navbar,
   NavbarBrand,
@@ -33,7 +34,9 @@ const NavBar = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem>{/* <ThemeSwitcher /> */}</NavbarItem>
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <Link href="/login">Login</Link>
         </NavbarItem>
