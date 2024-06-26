@@ -5,7 +5,7 @@ const CarDetailsPage = async (props: any) => {
     `https://0915ef4e-862d-4055-943f-303ac199da3d.mock.pstmn.io/cars/${props.params.carId}`
   );
   const { data } = await res.json();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div>
