@@ -1,4 +1,4 @@
-import ViewDetail from "@/components/ViewDetail";
+import ViewDetail from "@/components/Ui/ViewDetail";
 import { Card, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
