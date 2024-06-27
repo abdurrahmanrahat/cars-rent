@@ -22,7 +22,6 @@ export const UserSidebarWrapper = () => {
         })}
       >
         <div className={Sidebar.Header()}>
-          {" "}
           <Link className="flex" href="/">
             <Cog />
             <p className="font-bold text-inherit px-4">APOLLO GEARS</p>
@@ -42,7 +41,7 @@ export const UserSidebarWrapper = () => {
                 isActive={pathname === "/dashboard/rent-car"}
                 title="rent-car"
                 icon={<Car />}
-                href="/dashboard/rent-car"
+                href="/dashboard/car-rent"
               />
               <SidebarItem
                 isActive={pathname === "/dashboard/payments"}
