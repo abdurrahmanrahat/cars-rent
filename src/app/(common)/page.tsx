@@ -1,10 +1,9 @@
-import { Button } from "@nextui-org/react";
+import Banner from "@/components/Home/Banner/Banner";
 
 export default function Home() {
   return (
     <div>
-      Home Page
-      <Button>Next Ui</Button>
+      <Banner />
     </div>
   );
 }
