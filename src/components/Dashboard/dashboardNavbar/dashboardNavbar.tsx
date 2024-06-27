@@ -1,9 +1,10 @@
 "use client";
 
-import { useSidebarContext } from "@/lib/context/layout-context";
+import { useSidebarContext } from "@/app/dashboard/layout/layout-context";
 import { Input, Navbar, NavbarContent } from "@nextui-org/react";
 import { ChevronLeft, Menu, SearchCheck } from "lucide-react";
 import React from "react";
+import { UserDropdown } from "./user-dropdown";
 
 interface Props {
   children: React.ReactNode;
@@ -11,7 +12,6 @@ interface Props {
 
 export const DashboardNavbarWrapper = ({ children }: Props) => {
   const { collapsed, setCollapsed } = useSidebarContext();
-  console.log(collapsed);
 
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden ">
@@ -45,8 +45,7 @@ export const DashboardNavbarWrapper = ({ children }: Props) => {
           justify="end"
           className="w-fit data-[justify=end]:flex-grow-0"
         >
-          {/* <UserDropdown /> */}
-          <h2>user dropdown</h2>
+          <UserDropdown />
         </NavbarContent>
       </Navbar>
       {children}

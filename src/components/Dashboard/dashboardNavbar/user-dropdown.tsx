@@ -1,6 +1,7 @@
-// import { ThemeSwitcher } from "@/components/pages/shared/ThemeSwitcher";
 "use client";
-import { useAuth } from "@/lib/AuthProviders";
+
+// import { ThemeSwitcher } from "@/components/pages/shared/ThemeSwitcher";
+// import { useAuth } from "@/lib/AuthProviders";
 // import { logOut } from "@/app/(withComonLayout)/actions/auth";
 // import { ThemeSwitcher } from "@/app/(withComonLayout)/components/pages/shared/ThemeSwitcher";
 // import { useAuth } from "@/lib/AuthProviders";
@@ -15,8 +16,8 @@ import {
 //   import { DarkModeSwitch } from "./darkmodeswitch";
 
 export const UserDropdown = () => {
-  const { user } = useAuth();
-  console.log(user);
+  // const { user } = useAuth();
+  // console.log(user);
 
   return (
     <Dropdown>
@@ -39,7 +40,7 @@ export const UserDropdown = () => {
           className="flex flex-col justify-start w-full items-start"
         >
           <p>Signed in as</p>
-          <p>{user?.email}</p>
+          <p>abdurrahmanrahat@gmail.com</p>
         </DropdownItem>
         <DropdownItem key="settings">My Settings</DropdownItem>
         <DropdownItem key="team_settings">Team Settings</DropdownItem>

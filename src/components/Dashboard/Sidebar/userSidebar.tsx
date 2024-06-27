@@ -1,5 +1,5 @@
 "use client";
-import { useSidebarContext } from "@/lib/context/layout-context";
+import { useSidebarContext } from "@/app/dashboard/layout/layout-context";
 import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";

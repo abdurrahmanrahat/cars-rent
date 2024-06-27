@@ -1,29 +1,27 @@
 "use client";
 
+import { useSidebarContext } from "@/app/dashboard/layout/layout-context";
+import { Car, Cog, DollarSign, History, Home } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { Sidebar } from "./sidebar.styles";
 
-import { Car, Cog, DollarSign, History, Home } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-// import { useSidebarContext } from "../../layout/layout-context";
-
 export const DriverSidebarWrapper = () => {
   const pathname = usePathname();
-  // const { collapsed } = useSidebarContext();
+  const { collapsed } = useSidebarContext();
 
   return (
     <aside className="h-screen z-[20] sticky top-0">
-      {/* {collapsed ? <div className={Sidebar.Overlay()} /> : null} */}
+      {collapsed ? <div className={Sidebar.Overlay()} /> : null}
       <div
         className={Sidebar({
-          // collapsed: collapsed,
+          collapsed: collapsed,
         })}
       >
         <div className={Sidebar.Header()}>
-          {" "}
           <Link className="flex" href="/">
             <Cog />
             <p className="font-bold text-inherit px-4">APOLLO GEARS</p>

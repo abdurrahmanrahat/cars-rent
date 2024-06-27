@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+
+import { ReactNode, useState } from "react";
 import { SidebarContext } from "./layout-context";
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleToggleSidebar = () => {
