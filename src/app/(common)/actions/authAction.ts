@@ -1,5 +1,8 @@
 "use server";
 
+import { jwtDecode } from "jwt-decode";
+import { cookies } from "next/headers";
+
 export const signUpUser = async (prev: FormData, formData: FormData) => {
   try {
     const formattedData = JSON.stringify(Object.fromEntries(formData));
@@ -34,7 +37,26 @@ export const loginUser = async (prev: FormData, formData: FormData) => {
     });
     const data = await res.json();
 
+    // save into cookie
+    if (data.success) {
+      cookies().set("accessToken", data.data.accessToken);
+      cookies().set("refreshToken", data.data.refreshToken);
+    }
+
     return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const userInfo = async () => {
+  try {
+    const accessToken = cookies().get("accessToken")?.value;
+
+    let decodedData = null;
+    if (accessToken) {
+      decodedData = jwtDecode(accessToken) as any;
+    }
   } catch (error) {
     throw error;
   }

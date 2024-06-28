@@ -3,12 +3,14 @@
 import ActionSubmitButton from "@/components/Ui/ActionSubmitButton";
 import { Input } from "@nextui-org/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { createRef, useEffect } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "sonner";
 import { loginUser } from "../../actions/authAction";
 
 const LoginFrom = () => {
+  const router = useRouter();
   const ref = createRef<HTMLFormElement>();
 
   const [state, formAction] = useFormState(loginUser, null);
@@ -20,8 +22,9 @@ const LoginFrom = () => {
       });
 
       ref.current?.reset();
+      router.push("/");
     }
-  }, [state, ref]);
+  }, [state, ref, router]);
 
   return (
     <div>
@@ -34,11 +37,12 @@ const LoginFrom = () => {
           label="Password"
           variant="bordered"
         />
-        <div className="flex justify-end text-primary">
-          <Link href="/register">if you dont have account sign Up</Link>
+        <div className="flex justify-start text-primary my-4">
+          <p className="mr-2">if you do not have account</p>{" "}
+          <Link href="/register">sign up</Link>
         </div>
         <div className="flex justify-end mt-2">
-          <ActionSubmitButton></ActionSubmitButton>
+          <ActionSubmitButton>Login</ActionSubmitButton>
         </div>
       </form>
     </div>

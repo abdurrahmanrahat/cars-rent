@@ -45,7 +45,7 @@ const SignUpForm = () => {
           <Link href="/login">already have account ?</Link>
         </div>
         <div className="flex justify-end "></div>
-        <ActionSubmitButton></ActionSubmitButton>
+        <ActionSubmitButton>Sign Up</ActionSubmitButton>
       </form>
     </div>
   );
