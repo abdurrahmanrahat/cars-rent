@@ -14,7 +14,7 @@ export const DashboardNavbarWrapper = ({ children }: Props) => {
   const { collapsed, setCollapsed } = useSidebarContext();
 
   return (
-    <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden ">
+    <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Navbar
         isBordered
         className="w-full"

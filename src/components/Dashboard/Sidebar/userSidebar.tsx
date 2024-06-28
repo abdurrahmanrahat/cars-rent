@@ -1,13 +1,13 @@
 "use client";
+
 import { useSidebarContext } from "@/app/dashboard/layout/layout-context";
+import { Car, Cog, DollarSign, History, Home } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { Sidebar } from "./sidebar.styles";
-
-import { Car, Cog, DollarSign, History, Home } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export const UserSidebarWrapper = () => {
   const pathname = usePathname();
@@ -38,7 +38,7 @@ export const UserSidebarWrapper = () => {
             />
             <SidebarMenu title="Main Menu">
               <SidebarItem
-                isActive={pathname === "/dashboard/rent-car"}
+                isActive={pathname === "/dashboard/car-rent"}
                 title="rent-car"
                 icon={<Car />}
                 href="/dashboard/car-rent"
