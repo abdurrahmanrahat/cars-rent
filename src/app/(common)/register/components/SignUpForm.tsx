@@ -3,12 +3,14 @@
 import ActionSubmitButton from "@/components/Ui/ActionSubmitButton";
 import { Input } from "@nextui-org/react";
 import Link from "next/link";
-import { useEffect } from "react";
+import { createRef, useEffect } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "sonner";
 import { signUpUser } from "../../actions/authAction";
 
 const SignUpForm = () => {
+  const ref = createRef<HTMLFormElement>();
+
   const [state, formAction] = useFormState(signUpUser, null);
 
   useEffect(() => {
@@ -16,12 +18,14 @@ const SignUpForm = () => {
       toast.success(state.message, {
         duration: 1500,
       });
+
+      ref.current?.reset();
     }
-  }, [state]);
+  }, [state, ref]);
 
   return (
     <div>
-      <form action={formAction}>
+      <form ref={ref} action={formAction}>
         <Input name="name" type="text" label="Name" variant="bordered" />
         <Input
           name="email"
